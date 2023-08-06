@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resource xmlns="http://www.wxwidgets.org/wxxrc" version="2.5.3.0">
+  <object class="wxDialog" name="edit_extractor">
+    <title>Extractor setup</title>
+    <variant platform="mac">small</variant>
+    <object class="wxBoxSizer">
+      <minsize>300,-1d</minsize>
+      <orient>wxVERTICAL</orient>
+      <object class="sizeritem">
+        <object class="wxStaticBoxSizer">
+          <label>Language:</label>
+          <orient>wxVERTICAL</orient>
+          <object class="sizeritem">
+            <object class="wxStaticText">
+              <label>Language:</label>
+            </object>
+            <flag>wxEXPAND|wxLEFT|wxRIGHT|wxTOP</flag>
+            <border>5d</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxTextCtrl" name="extractor_language"/>
+            <flag>wxEXPAND|wxLEFT|wxRIGHT</flag>
+            <border>5d</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxStaticText">
+              <label>List of extensions separated by semicolons (e.g. *.cpp;*.h):</label>
+            </object>
+            <border>5d</border>
+            <flag>wxLEFT|wxRIGHT|wxTOP</flag>
+          </object>
+          <object class="sizeritem">
+            <object class="wxTextCtrl" name="extractor_extensions"/>
+            <flag>wxEXPAND|wxLEFT|wxRIGHT|wxBOTTOM</flag>
+            <border>5d</border>
+          </object>
+        </object>
+        <border>5d</border>
+        <flag>wxEXPAND|wxLEFT|wxRIGHT|wxTOP</flag>
+      </object>
+      <object class="sizeritem">
+        <object class="wxStaticBoxSizer">
+          <label>Invocation:</label>
+          <orient>wxVERTICAL</orient>
+          <object class="sizeritem">
+            <object class="wxStaticText">
+              <label>Command to extract translations:</label>
+            </object>
+            <flag>wxEXPAND|wxLEFT|wxRIGHT|wxTOP</flag>
+            <border>5d</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxTextCtrl" name="extractor_command">
+              <hint translate="0">xgettext -L PHP --add-comments=TRANSLATORS: --force-po -o %o %C %K %F</hint>
+            </object>
+            <flag>wxEXPAND|wxLEFT|wxRIGHT|wxBOTTOM</flag>
+            <border>5d</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxStaticText">
+              <label>This is the command used to launch the extractor.\n%o expands to the name of output file, %K to list\nof keywords, %F to list of input files,\n%C to charset flag (see below).</label>
+              <variant platform="mac">small</variant>
+              <fg>#777777</fg>
+            </object>
+            <flag>wxLEFT|wxRIGHT</flag>
+            <border>5d</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxStaticText">
+              <label>An item in keywords list:</label>
+            </object>
+            <border>5d</border>
+            <flag>wxLEFT|wxRIGHT|wxTOP</flag>
+          </object>
+          <object class="sizeritem">
+            <object class="wxTextCtrl" name="extractor_keywords">
+              <hint translate="0">-k%k</hint>
+            </object>
+            <flag>wxEXPAND|wxLEFT|wxRIGHT|wxBOTTOM</flag>
+            <border>5d</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxStaticText">
+              <label>This will be attached to the command line once\nfor each keyword. %k expands to the keyword.</label>
+              <variant platform="mac">small</variant>
+              <fg>#777777</fg>
+            </object>
+            <flag>wxLEFT|wxRIGHT</flag>
+            <border>5d</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxStaticText">
+              <label>An item in input files list:</label>
+            </object>
+            <border>5d</border>
+            <flag>wxLEFT|wxRIGHT|wxTOP</flag>
+          </object>
+          <object class="sizeritem">
+            <object class="wxTextCtrl" name="extractor_files">
+              <hint translate="0">%f</hint>
+            </object>
+            <flag>wxEXPAND|wxLEFT|wxRIGHT|wxBOTTOM</flag>
+            <border>5d</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxStaticText">
+              <label>This will be attached to the command line once\nfor each input file. %f expands to the filename.</label>
+              <variant platform="mac">small</variant>
+              <fg>#777777</fg>
+            </object>
+            <flag>wxLEFT|wxRIGHT</flag>
+            <border>5d</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxStaticText">
+              <label>Source code charset:</label>
+            </object>
+            <border>5d</border>
+            <flag>wxLEFT|wxRIGHT|wxTOP</flag>
+          </object>
+          <object class="sizeritem">
+            <object class="wxTextCtrl" name="extractor_charset">
+              <hint translate="0">--from-code=%c</hint>
+            </object>
+            <flag>wxEXPAND|wxLEFT|wxRIGHT|wxBOTTOM</flag>
+            <border>5d</border>
+          </object>
+          <object class="sizeritem">
+            <object class="wxStaticText">
+              <label>This will be attached to the command line\nonly if source code charset was given. %c expands to charset value.</label>
+              <variant platform="mac">small</variant>
+              <fg>#777777</fg>
+            </object>
+            <flag>wxLEFT|wxRIGHT</flag>
+            <border>5d</border>
+          </object>
+        </object>
+        <border>5d</border>
+        <flag>wxEXPAND|wxLEFT|wxRIGHT|wxTOP</flag>
+      </object>
+      <object class="sizeritem">
+        <object class="wxStdDialogButtonSizer">
+          <object class="button">
+            <object class="wxButton" name="wxID_OK">
+              <variant platform="mac">normal</variant>
+              <default>1</default>
+            </object>
+          </object>
+          <object class="button">
+            <object class="wxButton" name="wxID_CANCEL">
+              <variant platform="mac">normal</variant>
+            </object>
+          </object>
+        </object>
+        <flag platform="mac">wxALIGN_RIGHT</flag>
+        <flag platform="win">wxALIGN_RIGHT|wxALL</flag>
+        <flag platform="unix">wxALIGN_RIGHT|wxTOP|wxBOTTOM</flag>
+        <border>5d</border>
+      </object>
+    </object>
+  </object>
+</resource>

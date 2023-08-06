@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resource xmlns="http://www.wxwidgets.org/wxxrc" version="2.5.3.0">
+  <object class="wxDialog" name="properties">
+    <title>Translation Properties</title>
+    <centered>1</centered>
+    <style>wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER</style>
+    <object class="wxBoxSizer">
+      <orient>wxVERTICAL</orient>
+      <object class="sizeritem">
+        <object class="wxNotebook" name="properties_notebook">
+          <object class="notebookpage">
+            <object class="wxPanel">
+              <style>wxTAB_TRAVERSAL</style>
+              <object class="wxFlexGridSizer">
+                <growablecols>1</growablecols>
+                <cols>2</cols>
+                <object class="sizeritem">
+                  <object class="wxStaticText">
+                    <label>Project name and version:</label>
+                  </object>
+                  <flag>wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL</flag>
+                  <border>5d</border>
+                </object>
+                <object class="sizeritem">
+                  <object class="wxTextCtrl" name="prj_name">
+                    <size>100,-1d</size>
+                    <focused>1</focused>
+                  </object>
+                  <border>5d</border>
+                  <flag>wxEXPAND|wxRIGHT|wxTOP|wxBOTTOM</flag>
+                </object>
+                <object class="sizeritem">
+                  <object class="wxStaticText">
+                    <label>Language team:</label>
+                  </object>
+                  <flag>wxLEFT|wxRIGHT|wxBOTTOM|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL</flag>
+                  <border>5d</border>
+                </object>
+                <object class="sizeritem">
+                  <object class="wxTextCtrl" name="team">
+                    <size>100,-1d</size>
+                  </object>
+                  <border>5d</border>
+                  <flag>wxEXPAND|wxRIGHT|wxBOTTOM</flag>
+                </object>
+                <object class="spacer">
+                    <size>8,8d</size>
+                </object>
+                <object class="spacer">
+                    <size>8,8d</size>
+                </object>
+                <object class="sizeritem">
+                  <object class="wxStaticText" name="language_label">
+                    <label>Language:</label>
+                  </object>
+                  <flag>wxLEFT|wxRIGHT|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL</flag>
+                  <border>5d</border>
+                </object>
+                <object class="sizeritem">
+                  <object class="wxComboBox" subclass="LanguageCtrl" name="language"/>
+                  <border>5d</border>
+                  <flag>wxEXPAND|wxRIGHT</flag>
+                </object>
+                <object class="sizeritem">
+                  <object class="wxStaticText" name="plural_forms_label">
+                    <label>Plural forms:</label>
+                  </object>
+                  <flag>wxLEFT|wxRIGHT|wxBOTTOM|wxTOP|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL</flag>
+                  <border>5d</border>
+                </object>
+                <object class="sizeritem">
+                  <object class="wxRadioButton" name="plural_forms_default">
+                    <label>Use default rules for this language</label>
+                    <style>wxRB_GROUP</style>
+                  </object>
+                  <border>5d</border>
+                  <flag>wxEXPAND|wxRIGHT</flag>
+                </object>
+                <object class="spacer"></object>
+                <object class="sizeritem">
+                  <object class="wxRadioButton" name="plural_forms_custom">
+                    <label>Use custom expression</label>
+                  </object>
+                  <border>5d</border>
+                  <flag>wxEXPAND|wxRIGHT</flag>
+                </object>
+                <object class="spacer"></object>
+                <object class="sizeritem">
+                  <object class="wxTextCtrl" name="plural_forms_expr"/>
+                  <border>3d</border>
+                  <flag>wxEXPAND|wxRIGHT|wxTOP|wxBOTTOM</flag>
+                </object>
+                <object class="spacer">
+                    <size>10,20</size>
+                </object>
+                <object class="sizeritem">
+                  <object class="LearnMoreLink" name="plural_forms_help">
+                    <label>Learn about plural forms</label>
+                    <url>https://poedit.net/trac/wiki/Doc/PluralForms</url>
+                  </object>
+                  <flag>wxLEFT|wxRIGHT|wxBOTTOM|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL</flag>
+                  <border>5d</border>
+                </object>
+                <object class="spacer">
+                    <size>8,8d</size>
+                </object>
+                <object class="spacer">
+                    <size>8,8d</size>
+                </object>
+                <object class="sizeritem">
+                  <object class="wxStaticText">
+                    <label>Charset:</label>
+                  </object>
+                  <flag>wxLEFT|wxRIGHT|wxBOTTOM|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL</flag>
+                  <border>5d</border>
+                </object>
+                <object class="sizeritem">
+                  <object class="wxComboBox" name="charset"/>
+                  <border>5d</border>
+                  <flag>wxEXPAND|wxRIGHT|wxBOTTOM</flag>
+                </object>
+                <object class="sizeritem">
+                  <object class="wxStaticText">
+                    <label>Source code charset:</label>
+                  </object>
+                  <flag>wxLEFT|wxRIGHT|wxBOTTOM|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL</flag>
+                  <border>5d</border>
+                </object>
+                <object class="sizeritem">
+                  <object class="wxComboBox" name="source_code_charset"/>
+                  <border>5d</border>
+                  <flag>wxEXPAND|wxRIGHT|wxBOTTOM</flag>
+                </object>
+                <object class="spacer"></object>
+                <object class="sizeritem">
+                  <object class="wxButton" name="gettext_settings">
+                    <variant platform="mac">small</variant>
+                    <label platform="mac|unix">Advanced Extraction Settings…</label>
+                    <label platform="win">Advanced extraction settings…</label>
+                  </object>
+                  <flag>wxALIGN_RIGHT|wxRIGHT|wxBOTTOM</flag>
+                  <border platform="mac">13</border>
+                  <border platform="win|linux">5d</border>
+                </object>
+                <object class="spacer" platform="win">
+                    <size>8,8d</size>
+                </object>
+                <object class="spacer" platform="win">
+                    <size>8,8d</size>
+                </object>
+              </object>
+            </object>
+            <label platform="unix|mac">Translation Properties</label>
+            <label platform="win">Translation properties</label>
+          </object>
+          <object class="notebookpage">
+            <label platform="unix|mac">Sources Paths</label>
+            <label platform="win">Sources paths</label>
+            <object class="wxPanel" name="page_paths">
+              <object class="wxBoxSizer">
+                <orient>wxVERTICAL</orient>
+                <object class="sizeritem">
+                  <object class="wxStaticText" name="sources_path_label">
+                    <label>Extract text from source files in the following directories:</label>
+                  </object>
+                  <flag>wxLEFT|wxRIGHT|wxTOP</flag>
+                  <border>5d</border>
+                </object>
+                <object class="sizeritem">
+                  <object class="wxBoxSizer">
+                    <object class="sizeritem">
+                      <object class="wxStaticText">
+                        <label>Base path:</label>
+                        <variant platform="mac">small</variant>
+                      </object>
+                      <border>5d</border>
+                      <flag>wxLEFT|wxTOP|wxALIGN_CENTER_VERTICAL</flag>
+                    </object>
+                    <object class="sizeritem">
+                      <object class="unknown" name="basepath"/>
+                      <flag>wxLEFT|wxTOP|wxALIGN_CENTER_VERTICAL</flag>
+                      <border>5d</border>
+                      <option>1</option>
+                    </object>
+                    <object class="spacer">
+                      <size>3,-1d</size>
+                    </object>
+                    <object class="sizeritem">
+                      <object class="wxBitmapButton" name="open_basepath">
+                        <style>wxNO_BORDER</style>
+                        <variant>small</variant>
+                        <bitmap platform="mac"  stock_id="NSFollowLinkFreestandingTemplate"/>
+                        <bitmap platform="unix" stock_id="folder-open@symbolic"/>
+                        <bitmap platform="win"  stock_id="follow-link"/>
+                        <bg platform="win">#ffffff</bg>
+                      </object>
+                      <flag>wxRIGHT|wxTOP|wxALIGN_CENTER_VERTICAL</flag>
+                      <border>5d</border>
+                    </object>
+                    <object class="spacer">
+                      <size>1,1d</size>
+                    </object>
+                  </object>
+                  <flag>wxEXPAND</flag>
+                </object>
+                <object class="sizeritem">
+                  <object class="unknown" name="paths"/>
+                  <option>3</option>
+                  <flag>wxEXPAND|wxALL</flag>
+                  <border>5d</border>
+                </object>
+                <object class="sizeritem">
+                  <object class="unknown" name="excluded_paths">
+                  </object>
+                  <option>2</option>
+                  <flag>wxEXPAND|wxALL</flag>
+                  <border>5d</border>
+                </object>
+                <object class="sizeritem">
+                  <object class="wxBoxSizer">
+                    <orient>wxHORIZONTAL</orient>
+                    <object class="spacer">
+                      <option>1</option>
+                    </object>
+                    <object class="sizeritem">
+                      <object class="wxButton" name="custom_extensions">
+                        <variant platform="mac">small</variant>
+                        <label platform="mac|unix">Customize File Extensions…</label>
+                        <label platform="win">Customize file extensions…</label>
+                      </object>
+                      <flag>wxLEFT|wxALIGN_CENTER</flag>
+                      <border>5d</border>
+                    </object>
+                  </object>
+                  <flag>wxEXPAND|wxBOTTOM|wxLEFT|wxRIGHT</flag>
+                  <border>5d</border>
+                </object>
+              </object>
+            </object>
+          </object>
+          <object class="notebookpage">
+            <label platform="unix|mac">Sources Keywords</label>
+            <label platform="win">Sources keywords</label>
+            <object class="wxPanel" name="page_keywords">
+              <object class="wxBoxSizer">
+                <orient>wxVERTICAL</orient>
+                <object class="sizeritem">
+                  <object class="wxStaticText">
+                    <label>Use these keywords (function names) to recognize translatable strings\nin source files:</label>
+                  </object>
+                  <flag>wxLEFT|wxRIGHT|wxTOP</flag>
+                  <border>5d</border>
+                </object>
+                <object class="sizeritem">
+                  <object class="unknown" name="keywords"/>
+                  <option>1</option>
+                  <flag>wxLEFT|wxRIGHT|wxTOP|wxEXPAND</flag>
+                  <border>5d</border>
+                </object>
+                <object class="spacer">
+                    <size>0,4</size>
+                </object>
+                <object class="sizeritem">
+                  <object class="wxCheckBox" name="default_keywords">
+                    <label>Also use default keywords for supported languages</label>
+                  </object>
+                  <flag>wxLEFT|wxRIGHT|wxBOTTOM|wxEXPAND</flag>
+                  <border>5d</border>
+                </object>
+                <object class="sizeritem">
+                  <object class="LearnMoreLink" name="keywords_help">
+                    <label>Learn about gettext keywords</label>
+                    <url>https://poedit.net/trac/wiki/Doc/Keywords</url>
+                  </object>
+                  <flag>wxLEFT|wxRIGHT|wxBOTTOM|wxALIGN_LEFT</flag>
+                  <border platform="mac">6d</border>
+                  <border platform="unix">5d</border>
+                  <border platform="win">5d</border>
+                </object>
+              </object>
+            </object>
+          </object>
+        </object>
+        <option>1</option>
+        <flag>wxEXPAND|wxTOP|wxLEFT|wxRIGHT</flag>
+        <border>5d</border>
+      </object>
+      <object class="sizeritem">
+        <object class="wxStdDialogButtonSizer">
+          <object class="button">
+            <object class="wxButton" name="wxID_OK">
+              <variant platform="mac">normal</variant>
+              <default>1</default>
+            </object>
+          </object>
+          <object class="button">
+            <object class="wxButton" name="wxID_CANCEL">
+              <variant platform="mac">normal</variant>
+            </object>
+          </object>
+        </object>
+        <flag platform="mac">wxALIGN_RIGHT</flag>
+        <flag platform="win">wxALIGN_RIGHT|wxALL</flag>
+        <flag platform="unix">wxALIGN_RIGHT|wxTOP|wxBOTTOM</flag>
+        <border>5d</border>
+      </object>
+    </object>
+  </object>
+</resource>
